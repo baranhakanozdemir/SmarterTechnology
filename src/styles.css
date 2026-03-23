@@ -1,0 +1,253 @@
+:root {
+  color-scheme: light;
+  font-family: "Aptos", "Segoe UI Variable Text", "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #18212c;
+  background:
+    radial-gradient(circle at top left, rgba(248, 183, 72, 0.35), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(51, 121, 112, 0.25), transparent 30%),
+    linear-gradient(160deg, #fbf6ea 0%, #eef6f3 48%, #e6edf6 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero-panel,
+.workspace-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(24, 33, 44, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 24px 80px rgba(49, 65, 83, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.hero-panel {
+  padding: 2rem;
+}
+
+.hero-panel::after,
+.workspace-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto -3rem -4rem auto;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(248, 183, 72, 0.18), rgba(24, 33, 44, 0));
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8c5a11;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Rockwell", "Aptos Display", "Trebuchet MS", serif;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  line-height: 0.96;
+  max-width: 11ch;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.hero-copy,
+.panel-copy,
+.status-message,
+.verdict-copy,
+.rule-card p {
+  margin: 0;
+  color: #445261;
+}
+
+.hero-copy {
+  margin-top: 1rem;
+  max-width: 60ch;
+  font-size: 1.05rem;
+}
+
+.rules-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.rule-card,
+.input-panel,
+.result-panel {
+  border-radius: 22px;
+  border: 1px solid rgba(24, 33, 44, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.rule-card {
+  padding: 1.25rem;
+}
+
+.workspace-panel {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+}
+
+.input-panel,
+.result-panel {
+  padding: 1.5rem;
+}
+
+.package-form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: #26384c;
+}
+
+.field input {
+  border: 1px solid rgba(38, 56, 76, 0.15);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #18212c;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #337970;
+  box-shadow: 0 0 0 4px rgba(51, 121, 112, 0.14);
+  transform: translateY(-1px);
+}
+
+.stack-pill {
+  display: inline-flex;
+  margin: 1rem 0 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.stack-standard {
+  background: rgba(51, 121, 112, 0.14);
+  color: #24544d;
+}
+
+.stack-special {
+  background: rgba(233, 145, 32, 0.16);
+  color: #8a4d00;
+}
+
+.stack-rejected {
+  background: rgba(195, 72, 72, 0.14);
+  color: #842c2c;
+}
+
+.signal-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(24, 33, 44, 0.06);
+  color: #445261;
+  font-weight: 600;
+}
+
+.signal.on {
+  background: rgba(51, 121, 112, 0.14);
+  color: #24544d;
+}
+
+.error-message {
+  color: #842c2c;
+}
+
+@media (max-width: 900px) {
+  .rules-grid,
+  .workspace-panel,
+  .package-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 1rem, 1120px);
+    padding: 0.75rem 0 1.25rem;
+  }
+
+  .hero-panel,
+  .workspace-panel {
+    border-radius: 22px;
+  }
+
+  .hero-panel,
+  .input-panel,
+  .result-panel,
+  .workspace-panel {
+    padding: 1rem;
+  }
+}
