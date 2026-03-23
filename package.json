@@ -1,0 +1,12 @@
+{
+  "name": "smarter-technology",
+  "version": "1.0.0",
+  "description": "Robotic arm package sorting function",
+  "main": "sort.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
